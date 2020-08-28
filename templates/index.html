@@ -1,0 +1,17 @@
+{% include 'navbar.htm' %}
+
+<h1>GhostPost</h1>
+{% for post in posts %}
+    <div style="border:1px solid black; padding:10px;">
+        {% if post.isroast == True %}
+            <h3>Roast</h3>
+        {% else %}
+            <h3>Boast</h3>
+        {% endif %}
+        <h3>{{ post.post_content }}</h3>
+        <a href="upvote/{{ upvote.id }}">up</a>
+        <a href="downvote/{{ downvote.id }}">down</a>
+        <h3>{{ post.total_votes }}</h3>
+        <h3>{{ post.submissiondate }}</h3>
+    </div>
+{% endfor %}
